@@ -47,6 +47,175 @@ shamefully-hoist=false
 
 `shamefully-hoist=false` is critical — it enforces strict dependency isolation. Packages that work with hoisting but fail without it have undeclared dependencies. Fix the declaration, don't hoist.
 
+## Workspace Configuration Files (Root Level)
+
+These files live at the repo root and are **committed to git**. They standardize devex across the team so nobody's local setup drifts. Agents must not generate alternatives or overrides to these.
+
+### .npmrc
+```ini
+auto-install-peers=true
+strict-peer-dependencies=false
+shamefully-hoist=false
+engine-strict=true
+```
+
+### .nvmrc
+```
+20
+```
+Pins the Node.js version. Amplify, CI, and local dev all read this. If you use `fnm` or `volta` instead of `nvm`, they also respect this file.
+
+### .node-version
+```
+20
+```
+Same as `.nvmrc` but for tools that prefer this format (fnm, asdf, mise). Keep both in sync.
+
+### engines in root package.json
+```json
+{
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@9.15.4"
+}
+```
+`engine-strict=true` in `.npmrc` makes this enforced, not advisory. Wrong Node version → install fails. Wrong package manager → install fails. The `packageManager` field enables Corepack — run `corepack enable` once and pnpm auto-installs at the correct version.
+
+### .editorconfig
+```ini
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.py]
+indent_size = 4
+```
+Every editor and IDE respects this. No more tabs-vs-spaces debates. No more CRLF sneaking in from Windows.
+
+### .prettierrc
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "endOfLine": "lf"
+}
+```
+
+### .prettierignore
+```
+node_modules/
+dist/
+.next/
+cdk.out/
+coverage/
+pnpm-lock.yaml
+*.tsbuildinfo
+.turbo/
+```
+
+### eslint.config.js (root)
+```javascript
+// Flat config format (ESLint v9+)
+// Package-specific overrides in each package's eslint.config.js
+import js from '@eslint/js';
+import tseslint from 'typescript-eslint';
+
+export default tseslint.config(
+  js.configs.recommended,
+  ...tseslint.configs.strictTypeChecked,
+  {
+    ignores: ['**/dist/', '**/cdk.out/', '**/.next/', '**/coverage/'],
+  },
+  {
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/consistent-type-imports': 'error',
+    },
+  },
+);
+```
+
+### .lintstagedrc
+```json
+{
+  "packages/web/src/**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+  "packages/common/src/**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+  "packages/infra/**/*.ts": ["eslint --fix", "prettier --write"],
+  "**/*.{json,md,yaml,yml}": ["prettier --write"]
+}
+```
+Runs via `husky` pre-commit hook. Only lints/formats staged files, not the whole repo.
+
+### .husky/pre-commit
+```bash
+#!/bin/sh
+pnpm dlx lint-staged
+```
+
+### .husky/commit-msg
+```bash
+#!/bin/sh
+pnpm dlx commitlint --edit $1
+```
+
+### commitlint.config.js
+```javascript
+export default {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [2, 'always', [
+      'feat', 'fix', 'docs', 'style', 'refactor', 'perf',
+      'test', 'chore', 'ci', 'security', 'revert',
+    ]],
+    'scope-case': [2, 'always', 'kebab-case'],
+    'subject-case': [2, 'never', ['start-case', 'pascal-case', 'upper-case']],
+  },
+};
+```
+
+## Complete Root File Inventory
+
+Every g/d/n/a project root should have these files. If any are missing, the agent should flag it.
+```
+project-root/
+├── .editorconfig           # Editor consistency
+├── .eslint.config.js       # Linting (flat config)
+├── .gitignore              # See git-standards.md
+├── .husky/                 # Git hooks
+│   ├── pre-commit          # lint-staged
+│   └── commit-msg          # commitlint
+├── .lintstagedrc           # Staged file processing
+├── .node-version           # Node version (fnm/asdf/mise)
+├── .npmrc                  # pnpm config, engine enforcement
+├── .nvmrc                  # Node version (nvm)
+├── .prettierrc             # Code formatting
+├── .prettierignore         # Formatting exclusions
+├── commitlint.config.js    # Commit message rules
+├── package.json            # engines, packageManager, workspace scripts
+├── pnpm-lock.yaml          # COMMITTED. ALWAYS.
+├── pnpm-workspace.yaml     # Workspace package definitions
+├── tsconfig.base.json      # Shared TypeScript config
+└── turbo.json              # Build pipeline
+```
+
+**If a dev asks "how do I set up my local env":** `corepack enable && pnpm install`. That's it. Node version, pnpm version, formatting, linting, commit hooks — all auto-configured from these files.
+
 ## Build Orchestration: Turborepo
 
 Turborepo manages build order, caching, and parallel execution across workspace packages.
