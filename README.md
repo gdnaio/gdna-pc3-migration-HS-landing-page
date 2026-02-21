@@ -4,24 +4,70 @@ This repository contains the g/d/n/a development standards configuration for AI-
 
 ## What's Included
 
-### Steering Documents (13 files)
+### Steering Documents (16 files)
 
-**g/d/n/a Standards (10 files)** - Always active:
-- `nextjs-react-standards.md` - Next.js 14+ App Router patterns
+**g/d/n/a Universal Standards (13 files)** - Always active:
+- `frontend-architecture.md` - **NEW**: Vite vs Next.js decision tree, universal patterns
+- `architecture.md` - System design patterns (customize per project)
+- `coding-standards.md` - Core philosophy and error handling
 - `component-library.md` - shadcn/ui + Radix UI standards
 - `typescript-standards.md` - TypeScript strict mode and patterns
-- `state-management.md` - Zustand + TanStack Query
 - `python-standards.md` - FastAPI, pytest, type hints
 - `aws-cdk-standards.md` - CDK L2/L3 constructs, testing
 - `testing-standards.md` - Vitest, RTL, Playwright
 - `git-standards.md` - Conventional commits, branch strategy
 - `security-standards.md` - Auth.js, secrets, validation
 - `grc-compliance.md` - Data classification, audit logging, WCAG
+- `agentic-ai-standards.md` - **NEW**: Bedrock agents, guardrails, evaluation
+- `aws-cli-standards.md` - **NEW**: CLI best practices, session management
+- `docker-standards.md` - **NEW**: Multi-stage builds, security, optimization
+- `performance-standards.md` - **NEW**: Core Web Vitals, bundle budgets
+- `team-conventions.md` - **NEW**: Git workflow, sprint cadence, DoD
+- `mcp-standards.md` - **NEW**: Model Context Protocol configuration
+- `ip-boundaries.md` - **NEW**: Platform vs customer IP guidelines
+
+**Legacy Standards (kept for compatibility)**:
+- `nextjs-react-standards.md` - Superseded by `frontend-architecture.md`
+- `state-management.md` - Now covered in `frontend-architecture.md`
 
 **Project Templates (3 files)** - Customize for your project:
 - `product.md` - Product overview and personas
 - `structure.md` - Project structure and patterns
 - `tech.md` - Technology stack and configuration
+
+### Hooks (20 files)
+
+Automated quality gates that run on file save, commit, or other triggers:
+- `accessibility-audit.kiro.hook` - WCAG compliance checking
+- `agent-config-validate.kiro.hook` - Bedrock agent configuration validation
+- `agent-evaluation.kiro.hook` - AI agent performance evaluation
+- `api-schema-validation.kiro.hook` - OpenAPI schema validation
+- `auto-test-on-save.kiro.hook` - Run tests on file save
+- `bundle-size-check.kiro.hook` - Enforce bundle size budgets
+- `cdk-synth-validate.kiro.hook` - CDK synthesis validation
+- `code-coverage-analysis.kiro.hook` - Coverage threshold enforcement
+- `commit-message-helper.kiro.hook` - Conventional commit validation
+- `dependency-update-check.kiro.hook` - Outdated dependency alerts
+- `docker-validate.kiro.hook` - Dockerfile best practices
+- `documentation-sync.kiro.hook` - Keep docs in sync with code
+- `env-file-validation.kiro.hook` - Environment variable validation
+- `grc-compliance-audit.kiro.hook` - GRC compliance checking
+- `lint-format-on-save.kiro.hook` - Auto-format on save
+- `mcp-config-validate.kiro.hook` - MCP server configuration validation
+- `performance-profiling.kiro.hook` - Performance regression detection
+- `readme-spell-check.kiro.hook` - Documentation spell checking
+- `security-scan-deps.kiro.hook` - Dependency vulnerability scanning
+- `typescript-strict-check.kiro.hook` - TypeScript strict mode enforcement
+
+### Skills (2 folders)
+
+Reusable capability patterns:
+- `aws-bedrock-agent/` - Bedrock agent development patterns
+- `security-baseline/` - Security baseline implementation
+
+### Settings
+
+- `mcp.json` - Model Context Protocol server configuration
 
 ### Scripts
 
@@ -29,9 +75,7 @@ This repository contains the g/d/n/a development standards configuration for AI-
 
 ### Directories
 
-- `.kiro/specs/` - Feature specifications (empty template)
-- `.kiro/hooks/` - Automation hooks (empty template)
-- `.kiro/skills/` - Custom skills (empty template)
+- `.kiro/specs/` - Feature specifications (TEMPLATE.md included)
 
 ## Quick Start
 
@@ -119,18 +163,66 @@ fileMatchPattern: 'src/handlers/*.js'
 
 The g/d/n/a standards enforce these technology choices:
 
-| Layer | Standard |
-|-------|----------|
-| UI Framework | Next.js 14+ (App Router) |
-| Component Library | shadcn/ui + Radix UI |
-| Styling | Tailwind CSS |
-| Client State | Zustand |
-| Server State | TanStack Query |
-| Auth | Auth.js (NextAuth.js) |
-| Testing | Vitest + RTL + Playwright |
-| Backend | Python (FastAPI) or Node.js |
-| Infrastructure | AWS CDK (TypeScript) |
-| CI/CD | GitHub Actions |
+### Frontend Architecture Decision
+
+**NEW**: The `frontend-architecture.md` standard introduces a runtime-agnostic approach:
+
+| Choose Vite + React when | Choose Next.js (App Router) when |
+|--------------------------|----------------------------------|
+| Agentic SaaS, MVPs, internal tools | Enterprise clients, GRC/compliance projects |
+| Pure SPA / PWA behavior needed | SEO-driven pages required |
+| Static hosting preferred (S3/CloudFront) | Server-side data boundary required (PII control) |
+| Fastest build/dev cycle priority | Server Components simplify data architecture |
+
+**Default: Vite + React** unless the project has specific, documented reasons for Next.js.
+
+### Universal Stack (Works in Both Runtimes)
+
+| Layer | Standard | Why |
+|-------|----------|-----|
+| Language | TypeScript (strict mode) | Type safety across stack |
+| Components | shadcn/ui + Radix UI | Accessible, brandable, auditable |
+| Styling | Tailwind CSS | Via shadcn/ui theme tokens |
+| Client State | Zustand | Pure UI state (~1KB) |
+| Server State | TanStack Query | Caching, polling, optimistic updates |
+| Form State | react-hook-form + Zod | Local to form component |
+| Validation | Zod | Shared schemas via `common/` |
+| Routing | React Router (Vite) or App Router (Next.js) | Same structure, different wiring |
+| Testing | Vitest + RTL + Playwright | Identical test suite |
+| API Contracts | OpenAPI 3.1 + Swagger UI | Every endpoint documented |
+| Auth | AWS Cognito | Amplify (Vite) or Auth.js (Next.js) |
+| Backend | Python (FastAPI) or Node.js | AWS Lambda preferred |
+| Infrastructure | AWS CDK (TypeScript) | L2/L3 constructs |
+| CI/CD | GitHub Actions | Automated deployment |
+
+### Backend Compute Hierarchy
+
+1. **AWS Lambda** (default) — Stateless, event-driven
+2. **ECS Fargate / App Runner** — Long-running, WebSockets, connection pooling
+3. **EC2** (last resort) — Only when containers can't do it
+
+## Key Changes in This Version
+
+### Frontend Architecture Overhaul
+- **NEW**: `frontend-architecture.md` replaces framework-specific standards
+- Runtime-agnostic patterns work in both Vite and Next.js
+- Decision tree for choosing the right runtime
+- Universal project structure and component patterns
+- Zustand + TanStack Query replaces Redux
+
+### Expanded Standards Coverage
+- **Agentic AI**: Bedrock agents, guardrails, evaluation (`agentic-ai-standards.md`)
+- **Performance**: Core Web Vitals, bundle budgets (`performance-standards.md`)
+- **Team Workflow**: Sprint cadence, DoD, escalation (`team-conventions.md`)
+- **Docker**: Multi-stage builds, security (`docker-standards.md`)
+- **AWS CLI**: Best practices, session management (`aws-cli-standards.md`)
+- **MCP**: Model Context Protocol configuration (`mcp-standards.md`)
+- **IP Boundaries**: Platform vs customer IP (`ip-boundaries.md`)
+
+### Automation & Quality Gates
+- 20 pre-configured hooks for automated quality checks
+- Skills for Bedrock agents and security baseline
+- MCP server configuration template
 
 ## Documentation Exceptions
 
