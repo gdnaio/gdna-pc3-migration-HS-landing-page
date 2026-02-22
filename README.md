@@ -13,7 +13,7 @@ This repository contains the g/d/n/a development standards configuration for AI-
 - `component-library.md` - shadcn/ui + Radix UI standards
 - `typescript-standards.md` - TypeScript strict mode and patterns
 - `python-standards.md` - FastAPI, pytest, type hints
-- `aws-cdk-standards.md` - CDK L2/L3 constructs, testing
+- `gdna-iac-standards.md` - CDK L2/L3 constructs, testing
 - `testing-standards.md` - Vitest, RTL, Playwright
 - `git-standards.md` - Conventional commits, branch strategy
 - `security-standards.md` - Auth.js, secrets, validation

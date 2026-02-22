@@ -56,7 +56,7 @@ These enforce g/d/n/a standards automatically:
 3. `typescript-standards.md` - TypeScript strict mode
 4. `state-management.md` - Zustand + TanStack Query
 5. `python-standards.md` - FastAPI + pytest
-6. `aws-cdk-standards.md` - CDK L2/L3 constructs
+6. `gdna-iac-standards.md` - CDK L2/L3 constructs
 7. `testing-standards.md` - Vitest + RTL + Playwright
 8. `git-standards.md` - Conventional commits
 9. `security-standards.md` - Auth.js + secrets management
