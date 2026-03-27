@@ -1,0 +1,71 @@
+<header class="site-header" role="banner">
+  <div class="container site-header__inner">
+    <a href="https://gdna.io" class="site-header__logo" aria-label="g/d/n/a home">
+      <span class="site-header__logo-text">g/d/n/a</span>
+      <span class="site-header__logo-sub">cloud consulting practice</span>
+    </a>
+    <div class="site-header__badge">
+      <span class="site-header__badge-label">AWS Partner · No-Cost Service</span>
+      <span class="site-header__badge-sub">Partner Center 3.0 Migration Specialists</span>
+    </div>
+  </div>
+</header>
+
+<style>
+.site-header {
+  background-color: var(--color-squid-ink);
+  padding: var(--spacing-sm) 0;
+}
+.site-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+.site-header__logo {
+  text-decoration: none;
+  color: var(--color-white);
+}
+.site-header__logo-text {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5rem;
+  display: block;
+  letter-spacing: 0.05em;
+}
+.site-header__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gray);
+  display: block;
+}
+.site-header__badge {
+  text-align: right;
+}
+.site-header__badge-label {
+  display: inline-block;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.site-header__badge-sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  margin-top: 0.25rem;
+}
+@media (max-width: 767px) {
+  .site-header__inner { justify-content: center; text-align: center; }
+  .site-header__badge { text-align: center; }
+}
+</style>

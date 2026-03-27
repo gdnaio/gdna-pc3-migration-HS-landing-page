@@ -1,0 +1,64 @@
+[
+  {
+    "name": "left_label",
+    "label": "Left Column Label",
+    "type": "text",
+    "default": "What g/d/n/a delivers"
+  },
+  {
+    "name": "left_items",
+    "label": "Left Column Items",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 6, "default": 3 },
+    "children": [
+      {
+        "name": "icon",
+        "label": "Icon Emoji",
+        "type": "text",
+        "default": "🔧"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "richtext"
+      }
+    ]
+  },
+  {
+    "name": "right_label",
+    "label": "Right Column Label",
+    "type": "text",
+    "default": "How it works"
+  },
+  {
+    "name": "right_items",
+    "label": "Right Column Steps",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 6, "default": 4 },
+    "children": [
+      {
+        "name": "step_number",
+        "label": "Step Number",
+        "type": "number",
+        "default": 1
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      }
+    ]
+  }
+]

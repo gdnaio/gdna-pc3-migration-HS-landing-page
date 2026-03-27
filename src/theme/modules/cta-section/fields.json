@@ -1,0 +1,32 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": true,
+    "default": "Don't Wait — June 30, 2026 Is Closer Than It Looks."
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "text",
+    "default": "Schedule your intake call today. Migration slots are limited and the AWS deadline is firm. There's no cost, no commitment, and no reason to wait."
+  },
+  {
+    "name": "cta_link",
+    "label": "CTA Button",
+    "type": "link",
+    "required": true,
+    "supported_types": ["EXTERNAL", "CONTENT"],
+    "default": {
+      "url": { "href": "#", "text": "Get Started →" }
+    }
+  },
+  {
+    "name": "style",
+    "label": "Style",
+    "type": "choice",
+    "choices": [["warm", "Warm Background"], ["dark", "Dark"], ["light", "Light"]],
+    "default": "warm"
+  }
+]

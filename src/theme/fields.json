@@ -1,0 +1,51 @@
+[
+  {
+    "name": "brand_colors",
+    "label": "Brand Colors",
+    "type": "group",
+    "children": [
+      {
+        "name": "primary",
+        "label": "Squid Ink (Primary)",
+        "type": "color",
+        "default": { "color": "#002D43" }
+      },
+      {
+        "name": "accent",
+        "label": "Orange (CTA/Accent)",
+        "type": "color",
+        "default": { "color": "#FF9900" }
+      },
+      {
+        "name": "blue",
+        "label": "Blue (Innovation)",
+        "type": "color",
+        "default": { "color": "#0096FF" }
+      },
+      {
+        "name": "background",
+        "label": "Background",
+        "type": "color",
+        "default": { "color": "#FFFFFF" }
+      },
+      {
+        "name": "offwhite",
+        "label": "Offwhite",
+        "type": "color",
+        "default": { "color": "#F9F9F9" }
+      },
+      {
+        "name": "text",
+        "label": "Body Text",
+        "type": "color",
+        "default": { "color": "#000000" }
+      },
+      {
+        "name": "gray",
+        "label": "Gray (Borders)",
+        "type": "color",
+        "default": { "color": "#ACB7C5" }
+      }
+    ]
+  }
+]

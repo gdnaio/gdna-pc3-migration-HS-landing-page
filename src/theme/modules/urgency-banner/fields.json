@@ -1,0 +1,16 @@
+[
+  {
+    "name": "icon",
+    "label": "Icon",
+    "type": "choice",
+    "choices": [["warning", "⚠ Warning"], ["info", "ℹ Info"]],
+    "default": "warning"
+  },
+  {
+    "name": "message",
+    "label": "Banner Message",
+    "type": "richtext",
+    "required": true,
+    "default": "<strong>AWS Mandatory Migration Deadline: June 30, 2026.</strong> All AWS Marketplace sellers must be fully migrated to Partner Center 3.0 before this date."
+  }
+]

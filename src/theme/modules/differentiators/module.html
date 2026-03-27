@@ -1,0 +1,15 @@
+<section class="differentiators section" aria-label="{{ module.section_label }}">
+  <div class="container">
+    {% if module.section_label %}
+      <p class="section-label">{{ module.section_label }}</p>
+    {% endif %}
+    <div class="differentiators__grid">
+      {% for item in module.items %}
+        <div class="differentiators__item">
+          <span class="differentiators__icon" aria-hidden="true">{{ item.icon }}</span>
+          <div class="differentiators__text">{{ item.text }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

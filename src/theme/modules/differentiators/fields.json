@@ -1,0 +1,28 @@
+[
+  {
+    "name": "section_label",
+    "label": "Section Label",
+    "type": "text",
+    "default": "Why g/d/n/a over anyone else"
+  },
+  {
+    "name": "items",
+    "label": "Differentiators",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 6, "default": 4 },
+    "children": [
+      {
+        "name": "icon",
+        "label": "Icon Emoji",
+        "type": "text",
+        "default": "»"
+      },
+      {
+        "name": "text",
+        "label": "Text",
+        "type": "richtext",
+        "required": true
+      }
+    ]
+  }
+]

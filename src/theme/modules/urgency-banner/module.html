@@ -1,0 +1,12 @@
+<div class="urgency-banner" role="alert">
+  <div class="container urgency-banner__inner">
+    {% if module.icon == "warning" %}
+      <span class="urgency-banner__icon" aria-hidden="true">⚠</span>
+    {% else %}
+      <span class="urgency-banner__icon" aria-hidden="true">ℹ</span>
+    {% endif %}
+    <div class="urgency-banner__message">
+      {{ module.message }}
+    </div>
+  </div>
+</div>

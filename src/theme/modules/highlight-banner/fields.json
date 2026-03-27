@@ -1,0 +1,27 @@
+[
+  {
+    "name": "badge_text",
+    "label": "Badge Text",
+    "type": "text",
+    "default": "Optional Add-On · No Additional Cost"
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": true,
+    "default": "Stay SOC2 compliant through and after your migration"
+  },
+  {
+    "name": "body",
+    "label": "Body Text",
+    "type": "richtext"
+  },
+  {
+    "name": "style",
+    "label": "Style",
+    "type": "choice",
+    "choices": [["dark", "Dark"], ["orange", "Orange Accent"]],
+    "default": "dark"
+  }
+]

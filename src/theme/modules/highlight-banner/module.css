@@ -1,0 +1,37 @@
+.highlight-banner {
+  padding: var(--spacing-xl) 0;
+}
+.highlight-banner--dark {
+  background-color: var(--color-squid-ink);
+  color: var(--color-white);
+}
+.highlight-banner--orange {
+  background-color: #1A0A00;
+  color: var(--color-white);
+  border-top: 3px solid var(--color-orange);
+  border-bottom: 3px solid var(--color-orange);
+}
+.highlight-banner__badge {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: rgba(255, 153, 0, 0.2);
+  color: var(--color-orange);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+}
+.highlight-banner__heading {
+  font-size: 1.5rem;
+  color: var(--color-orange);
+  margin-bottom: var(--spacing-sm);
+}
+.highlight-banner__body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: var(--max-text-width);
+  color: var(--color-gray);
+}

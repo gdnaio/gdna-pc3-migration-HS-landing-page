@@ -1,0 +1,28 @@
+.differentiators__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+.differentiators__item {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+.differentiators__icon {
+  color: var(--color-orange);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.differentiators__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.differentiators__text strong {
+  color: var(--color-squid-ink);
+}
+@media (max-width: 767px) {
+  .differentiators__grid {
+    grid-template-columns: 1fr;
+  }
+}

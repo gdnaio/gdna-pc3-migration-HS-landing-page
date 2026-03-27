@@ -1,0 +1,35 @@
+.hero {
+  padding: var(--spacing-xl) 0;
+}
+.hero--dark {
+  background-color: var(--color-squid-ink);
+  color: var(--color-white);
+}
+.hero--light {
+  background-color: var(--color-white);
+}
+.hero--brand {
+  background: linear-gradient(135deg, var(--color-squid-ink) 0%, #003d5c 100%);
+  color: var(--color-white);
+}
+.hero__heading {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  font-size: 2.25rem;
+  line-height: 1.25;
+  max-width: 700px;
+}
+.hero--dark .hero__heading {
+  color: var(--color-white);
+}
+.hero__body {
+  margin-top: var(--spacing-md);
+  font-size: 1rem;
+  max-width: 650px;
+  line-height: 1.7;
+  color: var(--color-gray-pastel);
+}
+@media (max-width: 767px) {
+  .hero__heading { font-size: 1.5rem; }
+  .hero { padding: var(--spacing-lg) 0; }
+}

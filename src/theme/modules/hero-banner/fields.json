@@ -1,0 +1,22 @@
+[
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": true,
+    "default": "Your AWS Marketplace Partner Center 3.0 Migration — Done RIGHT For You, For Free, In Under 30 Minutes of Your Time."
+  },
+  {
+    "name": "body_text",
+    "label": "Body Text",
+    "type": "richtext",
+    "required": false
+  },
+  {
+    "name": "style",
+    "label": "Background Style",
+    "type": "choice",
+    "choices": [["dark", "Dark (Squid Ink)"], ["light", "Light"], ["brand", "Brand Gradient"]],
+    "default": "dark"
+  }
+]

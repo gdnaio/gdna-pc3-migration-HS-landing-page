@@ -1,0 +1,21 @@
+.urgency-banner {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  padding: var(--spacing-sm) 0;
+  font-size: 0.9rem;
+}
+.urgency-banner__inner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+.urgency-banner__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.urgency-banner__message {
+  line-height: 1.5;
+}
+.urgency-banner__message strong {
+  font-weight: var(--font-weight-bold);
+}

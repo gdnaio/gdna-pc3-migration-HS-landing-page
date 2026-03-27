@@ -1,0 +1,17 @@
+<section class="cta-section cta-section--{{ module.style }}" aria-labelledby="cta-heading">
+  <div class="container cta-section__inner">
+    <div class="cta-section__content">
+      <h2 id="cta-heading" class="cta-section__heading">{{ module.heading }}</h2>
+      {% if module.description %}
+        <p class="cta-section__desc">{{ module.description }}</p>
+      {% endif %}
+    </div>
+    {% if module.cta_link.url.href %}
+      <a href="{{ module.cta_link.url.href }}"
+         class="btn btn--primary cta-section__btn"
+         {% if module.cta_link.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+        {{ module.cta_link.url.text }}
+      </a>
+    {% endif %}
+  </div>
+</section>

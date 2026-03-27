@@ -1,0 +1,16 @@
+<section class="stats-row section" aria-label="{{ module.section_label }}">
+  <div class="container">
+    {% if module.section_label %}
+      <p class="section-label">{{ module.section_label }}</p>
+    {% endif %}
+    <div class="stats-row__grid">
+      {% for stat in module.stats %}
+        <div class="stats-row__card">
+          <span class="stats-row__value">{{ stat.value }}</span>
+          <span class="stats-row__highlight stats-row__highlight--{{ stat.highlight_color }}">{{ stat.highlight }}</span>
+          <p class="stats-row__desc">{{ stat.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

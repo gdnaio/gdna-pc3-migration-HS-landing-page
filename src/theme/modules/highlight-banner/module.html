@@ -1,0 +1,13 @@
+<section class="highlight-banner highlight-banner--{{ module.style }}" aria-labelledby="highlight-heading">
+  <div class="container">
+    {% if module.badge_text %}
+      <div class="highlight-banner__badge">
+        <span aria-hidden="true">⚡</span> {{ module.badge_text }}
+      </div>
+    {% endif %}
+    <h2 id="highlight-heading" class="highlight-banner__heading">{{ module.heading }}</h2>
+    {% if module.body %}
+      <div class="highlight-banner__body">{{ module.body }}</div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<section class="hero hero--{{ module.style }}" aria-labelledby="hero-heading">
+  <div class="container hero__inner">
+    <h1 id="hero-heading" class="hero__heading">{{ module.heading }}</h1>
+    {% if module.body_text %}
+      <div class="hero__body">{{ module.body_text }}</div>
+    {% endif %}
+  </div>
+</section>

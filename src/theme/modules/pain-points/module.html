@@ -1,0 +1,32 @@
+<section class="pain-points section section--dark" aria-labelledby="pain-points-heading">
+  <div class="container">
+    {% if module.section_label %}
+      <p class="section-label">{{ module.section_label }}</p>
+    {% endif %}
+    <h2 id="pain-points-heading" class="pain-points__heading">{{ module.heading }}</h2>
+
+    <div class="pain-points__problems">
+      {% for problem in module.problems %}
+        <div class="pain-points__problem">
+          <span class="pain-points__icon pain-points__icon--danger" aria-hidden="true">✕</span>
+          <div>
+            <strong>{{ problem.title }}</strong>
+            {% if problem.description %}
+              <p>{{ problem.description }}</p>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="pain-points__solution">
+      <span class="pain-points__icon pain-points__icon--success" aria-hidden="true">✓</span>
+      <div>
+        <strong>{{ module.solution_title }}</strong>
+        {% if module.solution_description %}
+          <p>{{ module.solution_description }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

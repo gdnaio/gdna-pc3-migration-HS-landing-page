@@ -1,0 +1,40 @@
+<section class="two-col section" aria-label="Features and process">
+  <div class="container two-col__grid">
+    <div class="two-col__left">
+      {% if module.left_label %}
+        <p class="section-label">{{ module.left_label }}</p>
+      {% endif %}
+      <div class="two-col__cards">
+        {% for item in module.left_items %}
+          <div class="two-col__card">
+            <span class="two-col__card-icon" aria-hidden="true">{{ item.icon }}</span>
+            <div>
+              <h3>{{ item.title }}</h3>
+              {% if item.description %}
+                <div class="two-col__card-desc">{{ item.description }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="two-col__right">
+      {% if module.right_label %}
+        <p class="section-label" style="color: var(--color-blue);">{{ module.right_label }}</p>
+      {% endif %}
+      <ol class="two-col__steps">
+        {% for step in module.right_items %}
+          <li class="two-col__step">
+            <span class="two-col__step-num" aria-hidden="true">{{ step.step_number }}</span>
+            <div>
+              <h3>{{ step.title }}</h3>
+              {% if step.description %}
+                <p class="two-col__step-desc">{{ step.description }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section>

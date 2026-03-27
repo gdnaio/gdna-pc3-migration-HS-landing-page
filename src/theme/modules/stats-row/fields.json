@@ -1,0 +1,42 @@
+[
+  {
+    "name": "section_label",
+    "label": "Section Label",
+    "type": "text",
+    "default": "What to expect"
+  },
+  {
+    "name": "stats",
+    "label": "Stats",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 4, "default": 3 },
+    "children": [
+      {
+        "name": "value",
+        "label": "Stat Value",
+        "type": "text",
+        "required": true,
+        "default": "$0"
+      },
+      {
+        "name": "highlight",
+        "label": "Highlight Text",
+        "type": "text",
+        "default": "No Cost"
+      },
+      {
+        "name": "highlight_color",
+        "label": "Highlight Color",
+        "type": "choice",
+        "choices": [["orange", "Orange"], ["blue", "Blue"], ["green", "Green"]],
+        "default": "orange"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Complete migration delivered at zero cost to your organization."
+      }
+    ]
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "name": "section_label",
+    "label": "Section Label",
+    "type": "text",
+    "default": "Why most migrations fall short"
+  },
+  {
+    "name": "heading",
+    "label": "Heading",
+    "type": "text",
+    "required": true,
+    "default": "Getting migrated is only half the job. The failures happen after go-live."
+  },
+  {
+    "name": "problems",
+    "label": "Problems",
+    "type": "group",
+    "occurrence": { "min": 1, "max": 5, "default": 2 },
+    "children": [
+      {
+        "name": "title",
+        "label": "Problem Title",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "solution_title",
+    "label": "Solution Title",
+    "type": "text",
+    "required": true
+  },
+  {
+    "name": "solution_description",
+    "label": "Solution Description",
+    "type": "text"
+  }
+]
