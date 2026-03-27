@@ -1,37 +1,37 @@
-.highlight-banner {
-  padding: var(--spacing-xl) 0;
-}
+.highlight-banner { padding: var(--gap-lg) 0; }
+.highlight-banner .container { max-width: var(--max-w); }
 .highlight-banner--dark {
-  background-color: var(--color-squid-ink);
+  background: linear-gradient(135deg, #001a2c 0%, var(--color-squid-ink) 100%);
   color: var(--color-white);
 }
 .highlight-banner--orange {
-  background-color: #1A0A00;
+  background: #1a0a00;
   color: var(--color-white);
-  border-top: 3px solid var(--color-orange);
-  border-bottom: 3px solid var(--color-orange);
+  border-top: 2px solid var(--color-orange);
+  border-bottom: 2px solid var(--color-orange);
 }
 .highlight-banner__badge {
   display: inline-block;
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: 0.7rem;
+  font-weight: var(--fw-bold);
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background-color: rgba(255, 153, 0, 0.2);
+  background: rgba(255,153,0,0.2);
   color: var(--color-orange);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-sm);
-  margin-bottom: var(--spacing-sm);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin-bottom: 0.6rem;
 }
 .highlight-banner__heading {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--color-orange);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.6rem;
 }
 .highlight-banner__body {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: var(--max-text-width);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 700px;
   color: var(--color-gray);
 }
+.highlight-banner__body p { margin: 0; }

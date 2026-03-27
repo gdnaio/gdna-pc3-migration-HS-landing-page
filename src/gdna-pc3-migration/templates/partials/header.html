@@ -1,8 +1,7 @@
 <header class="site-header" role="banner">
   <div class="container site-header__inner">
     <a href="https://gdna.io" class="site-header__logo" aria-label="g/d/n/a home">
-      <span class="site-header__logo-text">g/d/n/a</span>
-      <span class="site-header__logo-sub">cloud consulting practice</span>
+      <img src="https://gdna.io/gdna_logo.svg" alt="g/d/n/a logo" class="site-header__logo-img" width="120" height="40">
     </a>
     <div class="site-header__badge">
       <span class="site-header__badge-label">AWS Partner · No-Cost Service</span>
@@ -14,58 +13,39 @@
 <style>
 .site-header {
   background-color: var(--color-squid-ink);
-  padding: var(--spacing-sm) 0;
+  padding: 0.75rem 0;
 }
 .site-header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  gap: 0.75rem;
 }
-.site-header__logo {
-  text-decoration: none;
-  color: var(--color-white);
-}
-.site-header__logo-text {
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-bold);
-  font-size: 1.5rem;
-  display: block;
-  letter-spacing: 0.05em;
-}
-.site-header__logo-sub {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-gray);
-  display: block;
-}
-.site-header__badge {
-  text-align: right;
-}
+.site-header__logo { display: flex; align-items: center; text-decoration: none; }
+.site-header__logo-img { height: 36px; width: auto; filter: brightness(0) invert(1); }
+.site-header__badge { text-align: right; }
 .site-header__badge-label {
   display: inline-block;
   background-color: var(--color-orange);
   color: var(--color-white);
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  font-size: 0.75rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 .site-header__badge-sub {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--color-gray);
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 @media (max-width: 767px) {
-  .site-header__inner { justify-content: center; text-align: center; }
+  .site-header__inner { justify-content: center; text-align: center; flex-direction: column; }
   .site-header__badge { text-align: center; }
 }
 </style>
