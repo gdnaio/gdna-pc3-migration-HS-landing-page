@@ -24,8 +24,9 @@
   display: block;
   font-family: var(--font-heading);
   font-weight: var(--fw-bold);
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
 }
 .stats-row__highlight--orange { color: var(--color-orange); }
 .stats-row__highlight--blue { color: var(--color-blue); }
