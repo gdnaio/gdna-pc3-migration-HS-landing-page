@@ -5,60 +5,49 @@ inclusion: always
 
 # Project Structure
 
-## HubSpot Theme Layout
+## PC3 Landing Page Theme Layout
 
 ```
-project-root/
-├── src/
-│   └── theme/
-│       ├── theme.json
-│       ├── fields.json
-│       ├── templates/
-│       │   ├── layouts/
-│       │   │   └── base.html
-│       │   ├── pages/
-│       │   │   ├── landing-page.html
-│       │   │   └── [project-specific].html
-│       │   ├── system/
-│       │   │   ├── 404.html
-│       │   │   └── 500.html
-│       │   └── partials/
-│       │       ├── header.html
-│       │       ├── footer.html
-│       │       └── navigation.html
-│       ├── modules/
-│       │   ├── hero-banner/
-│       │   ├── feature-grid/
-│       │   ├── cta-section/
-│       │   ├── testimonial-carousel/
-│       │   ├── faq-accordion/
-│       │   ├── form-section/
-│       │   └── [project-specific-modules]/
-│       ├── css/
-│       │   ├── main.css
-│       │   └── _variables.css
-│       ├── js/
-│       │   └── main.js
-│       └── images/
-├── .kiro/
-│   ├── steering/
-│   ├── specs/
-│   ├── hooks/
-│   └── settings/
-├── hubspot.config.yml.example
-├── .gitignore
-├── package.json
-└── README.md
+src/
+└── theme/
+    ├── theme.json
+    ├── fields.json                    # Brand tokens (colors, fonts, spacing)
+    ├── templates/
+    │   ├── layouts/
+    │   │   └── base.html              # Base layout (header/footer/meta/scripts)
+    │   ├── pages/
+    │   │   └── pc3-migration.html     # PC3 migration landing page template
+    │   ├── system/
+    │   │   ├── 404.html
+    │   │   └── 500.html
+    │   └── partials/
+    │       ├── header.html
+    │       ├── footer.html
+    │       └── navigation.html
+    ├── modules/
+    │   ├── hero-banner/               # Hero with migration value prop + CTA
+    │   ├── feature-comparison/        # Old vs New PC3 comparison grid
+    │   ├── migration-steps/           # Timeline / steps visualization
+    │   ├── testimonial-carousel/      # Early adopter partner quotes
+    │   ├── form-section/              # HubSpot form for migration signup
+    │   ├── faq-accordion/             # Migration FAQ
+    │   └── cta-section/               # Footer CTA (secondary conversion)
+    ├── css/
+    │   ├── main.css
+    │   └── _variables.css
+    ├── js/
+    │   └── main.js
+    └── images/
 ```
 
-## Module Naming
+## PC3-Specific Modules
 
-- kebab-case directory names: `hero-banner/`, `feature-grid/`
-- Each module is self-contained: `module.html`, `module.css`, `module.js`, `meta.json`, `fields.json`
-- Group related modules by page type when the project grows large
-
-## Template Naming
-
-- Page templates: descriptive kebab-case — `landing-page.html`, `partner-signup.html`
-- System templates: match HubSpot conventions — `404.html`, `500.html`, `search-results.html`
-- Partials: component-style — `header.html`, `footer.html`, `navigation.html`
+| Module | Purpose |
+|--------|---------|
+| `hero-banner` | Migration value prop headline, subheadline, primary CTA |
+| `feature-comparison` | Side-by-side old PC vs PC3 feature grid |
+| `migration-steps` | Visual timeline showing migration process |
+| `testimonial-carousel` | Quotes from partners who migrated early |
+| `form-section` | HubSpot form embed for migration signup |
+| `faq-accordion` | Common migration questions and answers |
+| `cta-section` | Secondary CTA for partners not ready yet |

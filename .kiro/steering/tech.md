@@ -15,7 +15,7 @@ inclusion: always
 
 - HubL (HubSpot Markup Language)
 - HTML5 semantic markup
-- CSS3 (no preprocessor required — HubSpot handles bundling)
+- CSS3 (no preprocessor — HubSpot handles bundling)
 - Vanilla JS (minimal — defer/async, no heavy frameworks)
 
 ## Key Tools
@@ -23,43 +23,34 @@ inclusion: always
 - `@hubspot/cli` — Local dev, upload, watch, sandbox
 - HubSpot Sandbox — Preview and staging environments
 - HubSpot Forms API — Lead capture and workflow triggers
-- HubSpot CRM — Contact/deal pipeline integration
+- HubSpot CRM — Contact/deal pipeline for partner migration tracking
 
 ## Common Commands
 
 ```bash
-# Install HubSpot CLI
-pnpm add -D @hubspot/cli
-
-# Authenticate with portal
-pnpm dlx hs init
-
-# Upload theme to portal
-pnpm dlx hs upload src/theme theme
-
-# Watch and auto-upload on save
-pnpm dlx hs watch src/theme theme
-
-# Fetch existing theme from portal
-pnpm dlx hs fetch theme src/theme
-
-# Create new module
-pnpm dlx hs create module src/theme/modules/[module-name]
-
-# Create sandbox for preview
-pnpm dlx hs sandbox create
+pnpm dlx hs upload src/theme theme    # Upload to portal
+pnpm dlx hs watch src/theme theme     # Watch + auto-upload
+pnpm dlx hs fetch theme src/theme     # Pull from portal
+pnpm dlx hs create module src/theme/modules/[name]  # New module
 ```
 
-## Environment Variables
+## Environment Configuration
 
-Required in `hubspot.config.yml` (never committed — see `.gitignore`):
-- `portalId` — HubSpot portal ID per environment (dev/staging/prod)
-- `personalAccessKey` — Auth token (use `hs auth` to generate)
+Portal IDs (set in `hubspot.config.yml` — never committed):
+- Dev sandbox: [portal-id]
+- Staging: [portal-id]
+- Production: [portal-id]
 
 ## Deployment Flow
 
-1. Local development with `hs watch`
-2. Upload to sandbox/dev portal for preview
-3. Stakeholder review in HubSpot preview
-4. Upload to staging portal for QA
-5. Upload to production portal for go-live
+1. Local development with `hs watch` → dev sandbox
+2. Upload to staging portal for stakeholder review
+3. Marketing approves content and layout
+4. Upload to production portal for go-live
+5. Post-launch: A/B test variants, monitor conversion metrics
+
+## Integrations
+
+- HubSpot Form → Workflow: Migration onboarding email sequence
+- HubSpot Form → CRM: Create deal in partner migration pipeline
+- UTM parameters → Hidden form fields for campaign attribution
