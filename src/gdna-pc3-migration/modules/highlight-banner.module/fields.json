@@ -15,7 +15,8 @@
   {
     "name": "body_content",
     "label": "Body Text",
-    "type": "richtext"
+    "type": "richtext",
+    "default": "<p>Migrating to Partner Center 3.0 is an opportunity to close a frequently overlooked SOC2 control gap. g/d/n/a offers automated workflows for employee onboarding and offboarding — ensuring every resource change in Partner Center 3.0 is tracked, documented, and audit-ready. If you have an active SOC2 program or an upcoming audit, this add-on gives you the paper trail you need at no additional cost.</p>"
   },
   {
     "name": "style",

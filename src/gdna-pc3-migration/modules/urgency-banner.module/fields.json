@@ -11,6 +11,6 @@
     "label": "Banner Message",
     "type": "richtext",
     "required": true,
-    "default": "<strong>AWS Mandatory Migration Deadline: June 30, 2026.</strong> All AWS Marketplace sellers must be fully migrated to Partner Center 3.0 before this date."
+    "default": "<strong>AWS Mandatory Migration Deadline: June 30, 2026.</strong> All AWS Marketplace sellers must be fully migrated to Partner Center 3.0 before this date. Missing the deadline risks disruption to your Marketplace listings and revenue. g/d/n/a can get you there — at no cost — before the clock runs out."
   }
 ]

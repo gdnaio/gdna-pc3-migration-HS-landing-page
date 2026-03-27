@@ -37,6 +37,26 @@
         "type": "text",
         "default": "Complete migration delivered at zero cost to your organization."
       }
+    ],
+    "default": [
+      {
+        "value": "$0",
+        "highlight": "No Cost",
+        "highlight_color": "orange",
+        "description": "Complete migration delivered at zero cost to your organization."
+      },
+      {
+        "value": "<30",
+        "highlight": "Minutes Your Team Spends",
+        "highlight_color": "orange",
+        "description": "We handle everything. Your engineers contribute less than 30 minutes total."
+      },
+      {
+        "value": "Jun 30",
+        "highlight": "AWS Deadline · 2026",
+        "highlight_color": "blue",
+        "description": "Don't risk your Marketplace listings. Get migrated well before the cutoff."
+      }
     ]
   }
 ]

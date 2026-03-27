@@ -22,12 +22,24 @@
         "name": "title",
         "label": "Problem Title",
         "type": "text",
-        "required": true
+        "required": true,
+        "default": "Problem title"
       },
       {
         "name": "description",
         "label": "Description",
-        "type": "text"
+        "type": "text",
+        "default": "Problem description"
+      }
+    ],
+    "default": [
+      {
+        "title": "No process for adding new employees to roles",
+        "description": "New hires get skipped or added inconsistently — creating access gaps and audit risk."
+      },
+      {
+        "title": "No process for removing departed employees",
+        "description": "Former employees retaining Marketplace access is a direct SOC2 violation — and the most common post-migration oversight."
       }
     ]
   },
@@ -35,11 +47,13 @@
     "name": "solution_title",
     "label": "Solution Title",
     "type": "text",
-    "required": true
+    "required": true,
+    "default": "g/d/n/a plans for everything — including what happens after day one."
   },
   {
     "name": "solution_description",
     "label": "Solution Description",
-    "type": "text"
+    "type": "text",
+    "default": "We build employee lifecycle workflows in from the start so your environment stays compliant and audit-ready."
   }
 ]

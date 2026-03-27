@@ -11,22 +11,25 @@
     "type": "group",
     "occurrence": { "min": 1, "max": 6, "default": 3 },
     "children": [
+      { "name": "icon", "label": "Icon Emoji", "type": "text", "default": "🏗️" },
+      { "name": "title", "label": "Title", "type": "text", "required": true, "default": "Feature title" },
+      { "name": "description", "label": "Description", "type": "richtext", "default": "Feature description" }
+    ],
+    "default": [
       {
-        "name": "icon",
-        "label": "Icon Emoji",
-        "type": "text",
-        "default": "🔧"
+        "icon": "🏗️",
+        "title": "Expert Cloud Architecture — Not a SaaS Tool",
+        "description": "Our team performs cloud architecture engagements every day. We bring AWS pillar expertise — security, reliability, cost, operations — that generic migration tools simply don't have."
       },
       {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "required": true
+        "icon": "🔧",
+        "title": "Fully Managed Migration",
+        "description": "We drive the entire process. You provide minimal input where only you can — we handle the rest, keeping your engineering team's involvement under 30 minutes."
       },
       {
-        "name": "description",
-        "label": "Description",
-        "type": "richtext"
+        "icon": "✅",
+        "title": "Validated & Confirmed Live",
+        "description": "We don't hand off until your Partner Center 3.0 environment is verified, tested, and confirmed operational before the June 30th deadline."
       }
     ]
   },
@@ -42,23 +45,15 @@
     "type": "group",
     "occurrence": { "min": 1, "max": 6, "default": 4 },
     "children": [
-      {
-        "name": "step_number",
-        "label": "Step Number",
-        "type": "number",
-        "default": 1
-      },
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "required": true
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "text"
-      }
+      { "name": "step_number", "label": "Step Number", "type": "number", "default": 1 },
+      { "name": "title", "label": "Title", "type": "text", "required": true, "default": "Step title" },
+      { "name": "description", "label": "Description", "type": "text", "default": "Step description" }
+    ],
+    "default": [
+      { "step_number": 1, "title": "30-Minute Intake Call", "description": "We learn your current Marketplace setup. No prep needed — just show up." },
+      { "step_number": 2, "title": "g/d/n/a Executes the Migration", "description": "Our team does the work. You're on standby for brief approvals only where required." },
+      { "step_number": 3, "title": "Validation & Sign-Off", "description": "We confirm everything is live, correct, and Partner Center 3.0 compliant." },
+      { "step_number": 4, "title": "Optional: Compliance Workflows", "description": "Add SOC2-aligned employee onboarding/offboarding workflows at no extra cost." }
     ]
   }
 ]

@@ -11,18 +11,14 @@
     "type": "group",
     "occurrence": { "min": 1, "max": 6, "default": 4 },
     "children": [
-      {
-        "name": "icon",
-        "label": "Icon Emoji",
-        "type": "text",
-        "default": "»"
-      },
-      {
-        "name": "text",
-        "label": "Text",
-        "type": "richtext",
-        "required": true
-      }
+      { "name": "icon", "label": "Icon", "type": "text", "default": "»" },
+      { "name": "text", "label": "Text", "type": "richtext", "required": true, "default": "Differentiator text" }
+    ],
+    "default": [
+      { "icon": "»", "text": "<strong>We do cloud every day.</strong> Our consulting practice runs AWS architecture engagements continuously — we're not a SaaS product that set-and-forgot its AWS knowledge." },
+      { "icon": "»", "text": "<strong>Zero cost, zero obligation.</strong> This isn't a loss-leader with hidden fees. The migration is free, start to finish, with no contract required." },
+      { "icon": "»", "text": "<strong>Under 30 minutes of your time.</strong> We've built a process that respects your team's bandwidth. You won't be pulled into a months-long project." },
+      { "icon": "»", "text": "<strong>Compliance-ready from day one.</strong> Optional SOC2 workflows mean your migration leaves you better governed than before — not just migrated." }
     ]
   }
 ]

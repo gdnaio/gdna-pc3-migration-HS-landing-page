@@ -1,0 +1,127 @@
+{
+  "urgency_banner": {
+    "icon": "warning",
+    "message": "<strong>AWS Mandatory Migration Deadline: June 30, 2026.</strong> All AWS Marketplace sellers must be fully migrated to Partner Center 3.0 before this date. Missing the deadline risks disruption to your Marketplace listings and revenue. g/d/n/a can get you there — at no cost — before the clock runs out."
+  },
+  "hero_banner": {
+    "heading": "Your AWS Marketplace Partner Center 3.0 Migration — Done RIGHT For You, For Free, In Under 30 Minutes of Your Time.",
+    "body_text": "<p>If you sell on AWS Marketplace, you need to migrate to Partner Center 3.0 before June 30, 2026. Most migrations fail because teams only think about moving data — not what happens after. g/d/n/a's cloud consulting team handles the entire lifecycle: the migration, the validation, and the workflows that keep you compliant long after go-live. No cost. No engineering lift.</p>",
+    "style": "dark"
+  },
+  "stats_row": {
+    "section_label": "What to expect",
+    "stats": [
+      {
+        "value": "$0",
+        "highlight": "No Cost",
+        "highlight_color": "orange",
+        "description": "Complete migration delivered at zero cost to your organization."
+      },
+      {
+        "value": "<30",
+        "highlight": "Minutes Your Team Spends",
+        "highlight_color": "orange",
+        "description": "We handle everything. Your engineers contribute less than 30 minutes total."
+      },
+      {
+        "value": "Jun 30",
+        "highlight": "AWS Deadline · 2026",
+        "highlight_color": "blue",
+        "description": "Don't risk your Marketplace listings. Get migrated well before the cutoff."
+      }
+    ]
+  },
+  "pain_points": {
+    "section_label": "Why most migrations fall short",
+    "heading": "Getting migrated is only half the job. The failures happen after go-live.",
+    "problems": [
+      {
+        "title": "No process for adding new employees to roles",
+        "description": "New hires get skipped or added inconsistently — creating access gaps and audit risk."
+      },
+      {
+        "title": "No process for removing departed employees",
+        "description": "Former employees retaining Marketplace access is a direct SOC2 violation — and the most common post-migration oversight."
+      }
+    ],
+    "solution_title": "g/d/n/a plans for everything — including what happens after day one.",
+    "solution_description": "We build employee lifecycle workflows in from the start so your environment stays compliant and audit-ready."
+  },
+  "two_column_features": {
+    "left_label": "What g/d/n/a delivers",
+    "left_items": [
+      {
+        "icon": "🏗️",
+        "title": "Expert Cloud Architecture — Not a SaaS Tool",
+        "description": "Our team performs cloud architecture engagements every day. We bring AWS pillar expertise — security, reliability, cost, operations — that generic migration tools simply don't have."
+      },
+      {
+        "icon": "🔧",
+        "title": "Fully Managed Migration",
+        "description": "We drive the entire process. You provide minimal input where only you can — we handle the rest, keeping your engineering team's involvement under 30 minutes."
+      },
+      {
+        "icon": "✅",
+        "title": "Validated & Confirmed Live",
+        "description": "We don't hand off until your Partner Center 3.0 environment is verified, tested, and confirmed operational before the June 30th deadline."
+      }
+    ],
+    "right_label": "How it works",
+    "right_items": [
+      {
+        "step_number": 1,
+        "title": "30-Minute Intake Call",
+        "description": "We learn your current Marketplace setup. No prep needed — just show up."
+      },
+      {
+        "step_number": 2,
+        "title": "g/d/n/a Executes the Migration",
+        "description": "Our team does the work. You're on standby for brief approvals only where required."
+      },
+      {
+        "step_number": 3,
+        "title": "Validation & Sign-Off",
+        "description": "We confirm everything is live, correct, and Partner Center 3.0 compliant."
+      },
+      {
+        "step_number": 4,
+        "title": "Optional: Compliance Workflows",
+        "description": "Add SOC2-aligned employee onboarding/offboarding workflows at no extra cost."
+      }
+    ]
+  },
+  "highlight_banner": {
+    "badge_text": "Optional Add-On · No Additional Cost",
+    "heading": "Stay SOC2 compliant through and after your migration",
+    "body_content": "<p>Migrating to Partner Center 3.0 is an opportunity to close a frequently overlooked SOC2 control gap. g/d/n/a offers automated workflows for employee onboarding and offboarding — ensuring every resource change in Partner Center 3.0 is tracked, documented, and audit-ready. If you have an active SOC2 program or an upcoming audit, this add-on gives you the paper trail you need at no additional cost.</p>",
+    "style": "dark"
+  },
+  "differentiators": {
+    "section_label": "Why g/d/n/a over anyone else",
+    "items": [
+      {
+        "icon": "»",
+        "text": "<strong>We do cloud every day.</strong> Our consulting practice runs AWS architecture engagements continuously — we're not a SaaS product that set-and-forgot its AWS knowledge."
+      },
+      {
+        "icon": "»",
+        "text": "<strong>Zero cost, zero obligation.</strong> This isn't a loss-leader with hidden fees. The migration is free, start to finish, with no contract required."
+      },
+      {
+        "icon": "»",
+        "text": "<strong>Under 30 minutes of your time.</strong> We've built a process that respects your team's bandwidth. You won't be pulled into a months-long project."
+      },
+      {
+        "icon": "»",
+        "text": "<strong>Compliance-ready from day one.</strong> Optional SOC2 workflows mean your migration leaves you better governed than before — not just migrated."
+      }
+    ]
+  },
+  "cta_section": {
+    "heading": "Don't Wait — June 30, 2026 Is Closer Than It Looks.",
+    "description": "Schedule your intake call today. Migration slots are limited and the AWS deadline is firm. There's no cost, no commitment, and no reason to wait.",
+    "cta_text": "GET STARTED →",
+    "cta_url": "",
+    "style": "warm"
+  }
+}

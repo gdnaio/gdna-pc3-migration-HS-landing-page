@@ -10,7 +10,8 @@
     "name": "body_text",
     "label": "Body Text",
     "type": "richtext",
-    "required": false
+    "required": false,
+    "default": "<p>If you sell on AWS Marketplace, you need to migrate to Partner Center 3.0 before June 30, 2026. Most migrations fail because teams only think about moving data — not what happens after. g/d/n/a's cloud consulting team handles the entire lifecycle: the migration, the validation, and the workflows that keep you compliant long after go-live. No cost. No engineering lift.</p>"
   },
   {
     "name": "style",
