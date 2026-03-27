@@ -8,48 +8,13 @@
 
 {% block content %}
 
-{% dnd_area "main_content" label="Main Content" %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/urgency-banner.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/hero-banner.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/stats-row.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/pain-points.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/two-column-features.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/highlight-banner.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/differentiators.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-  {% dnd_section %}
-    {% dnd_module path="gdna-pc3-migration/modules/cta-section.module" %}
-    {% end_dnd_module %}
-  {% end_dnd_section %}
-
-{% end_dnd_area %}
+{% module "urgency_banner" path="gdna-pc3-migration/modules/urgency-banner.module" %}
+{% module "hero_banner" path="gdna-pc3-migration/modules/hero-banner.module" %}
+{% module "stats_row" path="gdna-pc3-migration/modules/stats-row.module" %}
+{% module "pain_points" path="gdna-pc3-migration/modules/pain-points.module" %}
+{% module "two_col_features" path="gdna-pc3-migration/modules/two-column-features.module" %}
+{% module "highlight_banner" path="gdna-pc3-migration/modules/highlight-banner.module" %}
+{% module "differentiators" path="gdna-pc3-migration/modules/differentiators.module" %}
+{% module "cta_section" path="gdna-pc3-migration/modules/cta-section.module" %}
 
 {% endblock content %}
