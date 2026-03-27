@@ -29,13 +29,13 @@
   border-left: 3px solid #D32F2F;
 }
 .pain-points__problem strong { color: var(--color-white); }
-.pain-points__problem p { color: var(--color-gray); margin-top: 0.15rem; font-size: 0.8rem; }
+.pain-points__problem p { color: rgba(255,255,255,0.7); margin-top: 0.15rem; font-size: 0.8rem; }
 .pain-points__solution {
   background: rgba(76,175,80,0.12);
   border-left: 3px solid var(--color-success);
 }
 .pain-points__solution strong { color: var(--color-white); }
-.pain-points__solution p { color: var(--color-gray); margin-top: 0.15rem; font-size: 0.8rem; }
+.pain-points__solution p { color: rgba(255,255,255,0.7); margin-top: 0.15rem; font-size: 0.8rem; }
 .pain-points__icon {
   width: 1.3rem;
   height: 1.3rem;
