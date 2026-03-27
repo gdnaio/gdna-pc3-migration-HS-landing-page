@@ -1,50 +1,53 @@
 # Partner Central 3.0 Migration Landing Page
 
-HubSpot CMS landing page driving partner adoption of Partner Central 3.0. Built with g/d/n/a AIDLC standards using the [HubSpot Kiro Standards Template](https://github.com/gdnaio/gdna-hubspot-kiro-standards-template).
+HubSpot CMS landing page driving partner adoption of Partner Central 3.0. Built with g/d/n/a AIDLC standards.
 
-## What This Is
-
-A conversion-focused landing page that:
-- Communicates the value of migrating to PC3
-- Shows a feature comparison (old vs new)
-- Walks partners through the migration process
-- Captures leads via HubSpot form → onboarding workflow
-- Tracks conversions with UTM attribution
-
-## Quick Start
+## Setup
 
 ```bash
 pnpm install
-pnpm dlx hs init                          # Auth with your portal
-pnpm dlx hs watch src/theme theme          # Dev with auto-upload
 ```
 
-## Deployment
+Get a HubSpot personal access key from Anvi or Will, then run in your terminal (not Kiro):
 
 ```bash
-pnpm dlx hs upload src/theme theme --portal=dev      # Dev sandbox
-pnpm dlx hs upload src/theme theme --portal=staging   # Stakeholder review
-pnpm dlx hs upload src/theme theme --portal=prod      # Go live
+pnpm --package=@hubspot/cli dlx hs auth
 ```
 
-## Specs
+This creates `hubspot.config.yml` locally (never committed).
 
-The AIDLC spec lives in `.kiro/specs/pc3-landing-page/`:
-- `requirements.md` — Functional, content, SEO, design requirements
-- `design.md` — Module composition, field design, responsive behavior
-- `tasks.md` — Implementation tasks
+## Upload to HubSpot
+
+```bash
+# CSS + JS + Templates
+pnpm --package=@hubspot/cli dlx hs cms upload src/gdna-pc3-migration/css gdna-pc3-migration/css
+pnpm --package=@hubspot/cli dlx hs cms upload src/gdna-pc3-migration/js gdna-pc3-migration/js
+pnpm --package=@hubspot/cli dlx hs cms upload src/gdna-pc3-migration/templates gdna-pc3-migration/templates
+
+# Modules
+pnpm --package=@hubspot/cli dlx hs cms upload src/gdna-pc3-migration/modules gdna-pc3-migration/modules
+```
+
+## Preview
+
+After uploading, go to your HubSpot portal → Marketing → Website → Website Pages → Create page → select "PC3 Migration Landing Page" template → Preview.
 
 ## Modules
 
 | Module | Purpose |
 |--------|---------|
-| `hero-banner` | Migration value prop + primary CTA |
-| `feature-comparison` | Old PC vs PC3 side-by-side grid |
-| `migration-steps` | Visual timeline of migration process |
-| `testimonial-carousel` | Early adopter partner quotes |
-| `form-section` | HubSpot form for migration signup |
-| `faq-accordion` | Common migration questions |
-| `cta-section` | Secondary CTA for undecided partners |
+| `urgency-banner.module` | AWS deadline warning banner |
+| `hero-banner.module` | Migration value prop + headline |
+| `stats-row.module` | $0 / <30 min / Jun 30 stat cards |
+| `pain-points.module` | Why migrations fail + g/d/n/a solution |
+| `two-column-features.module` | What we deliver + How it works |
+| `highlight-banner.module` | SOC2 compliance add-on |
+| `differentiators.module` | Why g/d/n/a over anyone else |
+| `cta-section.module` | Final CTA with Get Started button |
+
+## Specs
+
+AIDLC spec in `.kiro/specs/pc3-landing-page/` — requirements, design, tasks.
 
 ---
 

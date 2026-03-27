@@ -10,17 +10,20 @@
     "name": "description",
     "label": "Description",
     "type": "text",
-    "default": "Schedule your intake call today. Migration slots are limited and the AWS deadline is firm. There's no cost, no commitment, and no reason to wait."
+    "default": "Schedule your intake call today. Migration slots are limited and the AWS deadline is firm."
   },
   {
-    "name": "cta_link",
-    "label": "CTA Button",
-    "type": "link",
-    "required": true,
-    "supported_types": ["EXTERNAL", "CONTENT"],
-    "default": {
-      "url": { "href": "#", "text": "Get Started →" }
-    }
+    "name": "cta_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Get Started →"
+  },
+  {
+    "name": "cta_url",
+    "label": "CTA Button URL",
+    "type": "url",
+    "default": "",
+    "supported_types": ["EXTERNAL", "CONTENT"]
   },
   {
     "name": "style",

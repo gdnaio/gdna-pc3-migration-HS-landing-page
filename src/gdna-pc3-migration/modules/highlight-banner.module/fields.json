@@ -13,7 +13,7 @@
     "default": "Stay SOC2 compliant through and after your migration"
   },
   {
-    "name": "body",
+    "name": "body_content",
     "label": "Body Text",
     "type": "richtext"
   },
